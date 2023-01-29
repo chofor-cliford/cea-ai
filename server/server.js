@@ -6,7 +6,7 @@ import express from 'express';
 dotenv.config();
 
 const configuration = new Configuration({
-  apiKey: process.env.OPENAPI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 const openai = new OpenAIApi(configuration);
@@ -41,4 +41,6 @@ app.post('/', async (req, res) => {
     }
 })
 
-app.listen(process.env.PORT || 5000, () => console.log(`Server connected on http://localhost:5000`));
+app.listen(process.env.PORT || 5000, () =>
+  console.log(`Server connected on https://cea-ai.onrender.com`)
+);
